@@ -27,10 +27,6 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _init() async {
-    // var path = Directory.current.path;
-    // Hive..init(path);
-    // ..registerAdapter(PersonAdapter());
-    //  box = await Hive.openBox("test");
     _box = await Hive.openBox<List<TestData>>('myBox');
     List<TestData> obj = [
       TestData(name: "name", id: 1),
@@ -43,10 +39,6 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     List<String> getData = ["", "", ""];
-    //   var path = Directory.current.path;
-    // Hive
-    //   ..init(path)
-    //   ..registerAdapter(PersonAdapter());
 
     return GetMaterialApp(
       title: 'Flutter Demo',
@@ -75,7 +67,7 @@ class _MyAppState extends State<MyApp> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Get.to(nextScreen());
+            Get.to(NextScreen());
           },
           tooltip: 'Increment',
           child: Icon(Icons.add),
